@@ -1,0 +1,38 @@
+{
+  "name": "memory-element",
+  "version": "0.0.0",
+  "license": "MIT",
+  "description": "Record element history.",
+  "main": "dist/index.js",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ken7253/memory-element.git"
+  },
+  "author": "ken7253 <ken7253@gmail.com> (https://dairoku-studio.com)",
+  "bugs": {
+    "url": "https://github.com/ken7253/memory-element/issues"
+  },
+  "homepage": "https://github.com/ken7253/memory-element#readme",
+  "engines": {
+    "node": "^16.15.0"
+  },
+  "volta": {
+    "node": "16.15.0"
+  },
+  "scripts": {
+    "build": "node --loader ts-node/esm scripts/build.ts",
+    "watch": "tsc -w",
+    "lint": "eslint"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.31",
+    "@typescript-eslint/eslint-plugin": "^5.22.0",
+    "@typescript-eslint/parser": "^5.22.0",
+    "esbuild": "^0.14.38",
+    "eslint": "^8.15.0",
+    "npm-run-all": "^4.1.5",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.4"
+  }
+}
