@@ -34,13 +34,13 @@ const buildLog = (result: esbuild.BuildResult) => {
   // エラー表示
   if (result.errors.length !== 0) {
     result.errors.forEach((error) => {
-      console.log(error);
+      console.log(error.text);
     });
   }
   // 警告表示
   if (result.warnings.length !== 0) {
     result.warnings.forEach((message) => {
-      console.log(message);
+      console.log(message.text);
     });
   }
   // エラーと警告がなければ完了表示
