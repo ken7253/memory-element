@@ -22,4 +22,23 @@ export default class MemoryElement {
     };
     this.memory = [];
   }
+
+  take(): void {
+    if (this.env.record.order === 'ascending') {
+      const size = this.memory.push({
+        data: this.observeTarget,
+      });
+      if (size > this.env.record.maxLength) {
+        this.memory.shift();
+      }
+    } else {
+      // this.env.record.order === 'descending'
+      const size = this.memory.unshift({
+        data: this.observeTarget,
+      });
+      if (size > this.env.record.maxLength) {
+        this.memory.pop();
+      }
+    }
+  }
 }
