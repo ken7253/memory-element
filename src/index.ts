@@ -2,9 +2,6 @@ import defaultConfig, { Config } from './util/defaultConfig';
 
 interface MemoryItem {
   data: Element;
-  extension?: {
-    changed: Partial<Element>;
-  };
 }
 
 /**
