@@ -23,6 +23,7 @@
   "scripts": {
     "build": "node --loader ts-node/esm scripts/build.ts",
     "watch": "node --loader ts-node/esm scripts/build.ts -w",
+    "fmt": "prettier . -w",
     "lint": "run-p lint:*",
     "lint:ts": "eslint .",
     "lint:types": "tsc --noEmit",
