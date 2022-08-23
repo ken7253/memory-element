@@ -15,7 +15,7 @@ export default class MemoryElement {
 
   readonly observeTarget: Element;
 
-  memory: MemoryItem[];
+  protected memory: MemoryItem[];
 
   constructor(element: Element, config: Partial<Config>) {
     this.observeTarget = element;
@@ -23,20 +23,6 @@ export default class MemoryElement {
       ...defaultConfig,
       ...config,
     };
-    this.memory = [];
-  }
-
-  take() {
-    const order = this.env.record.order;
-    if (order === 'ascending') {
-      this.memory.push({ data: this.observeTarget });
-    } else {
-      this.memory.unshift({ data: this.observeTarget });
-    }
-    this.memory.length = this.env.record.maxLength;
-  }
-
-  clear() {
     this.memory = [];
   }
 }
