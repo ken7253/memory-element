@@ -1,25 +1,25 @@
 /**
  * esbuildのビルド用スクリプト
  */
-import esbuild from "esbuild";
+import esbuild from 'esbuild';
 
-import fs from "node:fs";
-import path from "node:path";
+import fs from 'node:fs';
+import path from 'node:path';
 
-console.time("time");
+console.time('time');
 
 /** コマンドライン引数 */
 const args = [...process.argv].slice(2);
-const isWatch = args.includes("-w");
+const isWatch = args.includes('-w');
 
 /** 設定 */
 const config: esbuild.BuildOptions = {
   bundle: true,
-  entryPoints: [path.join("src", "index.ts")],
-  outdir: "dist",
+  entryPoints: [path.join('src', 'index.ts')],
+  outdir: 'dist',
   minify: !isWatch,
   watch: isWatch,
-  sourcemap: isWatch ? "inline" : "linked",
+  sourcemap: isWatch ? 'inline' : 'linked',
   metafile: true,
 };
 
@@ -27,7 +27,7 @@ const config: esbuild.BuildOptions = {
 const buildLog = (result: esbuild.BuildResult) => {
   if (result.metafile) {
     fs.writeFileSync(
-      path.join(process.cwd(), ".tmp", "meta.json"),
+      path.join(process.cwd(), '.tmp', 'meta.json'),
       JSON.stringify(result.metafile, undefined, 2)
     );
   }
@@ -45,20 +45,20 @@ const buildLog = (result: esbuild.BuildResult) => {
   }
   // エラーと警告がなければ完了表示
   if (result.warnings.length === 0 && result.errors.length === 0) {
-    console.log("complete!");
-    console.timeEnd("time");
+    console.log('complete!');
+    console.timeEnd('time');
   }
 };
 
 /** watch時のログ表示 */
 const watchLog = () => {
-  console.timeEnd("time");
-  console.log("Watching files...");
+  console.timeEnd('time');
+  console.log('Watching files...');
 };
 
 (async () => {
   esbuild.build(config).then((result) => {
-    if (args.includes("-w")) {
+    if (args.includes('-w')) {
       watchLog();
     } else {
       buildLog(result);

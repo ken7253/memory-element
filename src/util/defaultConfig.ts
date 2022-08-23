@@ -1,9 +1,9 @@
 export interface Config {
   record: {
-    order: 'ascending' | 'descending',
-    extension: boolean,
-    maxLength: number
-  }
+    order: 'ascending' | 'descending';
+    extension: boolean;
+    maxLength: number;
+  };
 }
 
 export default <Config>{
@@ -11,5 +11,5 @@ export default <Config>{
     order: 'ascending',
     extension: true,
     maxLength: 10,
-  }
-}
+  },
+};

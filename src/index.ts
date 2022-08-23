@@ -1,4 +1,4 @@
-import defaultConfig, { Config } from "./util/defaultConfig";
+import defaultConfig, { Config } from './util/defaultConfig';
 
 interface MemoryItem {
   data: Element;
@@ -28,12 +28,12 @@ export default class MemoryElement {
 
   take() {
     const order = this.env.record.order;
-    if (order === "ascending") {
+    if (order === 'ascending') {
       this.memory.push({ data: this.observeTarget });
     } else {
       this.memory.unshift({ data: this.observeTarget });
     }
-    this.memory.length = this.env.record.maxLength;;
+    this.memory.length = this.env.record.maxLength;
   }
 
   clear() {
