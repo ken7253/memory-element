@@ -10,7 +10,7 @@ interface MemoryItem {
 export default class MemoryElement {
   readonly env: Required<Config>;
 
-  readonly observeTarget: Element;
+  protected observeTarget: Element;
 
   protected memory: MemoryItem[];
 
@@ -40,5 +40,12 @@ export default class MemoryElement {
         this.memory.pop();
       }
     }
+  }
+
+  restore(index: number) {
+    if (index > this.env.record.maxLength) {
+      throw new Error('index specification is greater than maxLength.');
+    }
+    this.observeTarget = this.memory[index].data;
   }
 }
