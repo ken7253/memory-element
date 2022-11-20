@@ -30,15 +30,16 @@
     "prebuild": "ts-node --esm scripts/clear.ts"
   },
   "devDependencies": {
-    "@types/node": "^17.0.31",
-    "@typescript-eslint/eslint-plugin": "^5.22.0",
-    "@typescript-eslint/parser": "^5.22.0",
-    "esbuild": "^0.14.38",
-    "eslint": "^8.15.0",
+    "@types/node": "^18.11.9",
+    "@typescript-eslint/eslint-plugin": "^5.43.0",
+    "@typescript-eslint/parser": "^5.43.0",
+    "esbuild": "^0.15.14",
+    "eslint": "^8.28.0",
     "eslint-config-prettier": "^8.5.0",
+    "npm-check-updates": "^16.4.1",
     "npm-run-all": "^4.1.5",
-    "prettier": "^2.6.2",
-    "ts-node": "^10.7.0",
-    "typescript": "^4.6.4"
+    "prettier": "^2.7.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.3"
   }
 }
