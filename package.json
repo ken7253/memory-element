@@ -21,13 +21,13 @@
     "node": "16.15.0"
   },
   "scripts": {
-    "build": "node --loader ts-node/esm scripts/build.ts",
-    "watch": "node --loader ts-node/esm scripts/build.ts -w",
+    "build": "ts-node --esm scripts/build.ts",
+    "watch": "ts-node --esm scripts/build.ts -w",
     "fmt": "prettier . -w",
     "lint": "run-p lint:*",
     "lint:ts": "eslint .",
     "lint:types": "tsc --noEmit",
-    "prebuild": "node --loader ts-node/esm scripts/clear.ts"
+    "prebuild": "ts-node --esm scripts/clear.ts"
   },
   "devDependencies": {
     "@types/node": "^17.0.31",
